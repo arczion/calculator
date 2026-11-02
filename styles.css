@@ -1,0 +1,40 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+      font-family: "Lucida Console", "Courier New", monospace;
+}
+
+.calculator-body{
+    width: 200px;
+    height: 400px;
+    background-color: #606060;
+    padding: 8px;
+    display: flex; 
+    flex-direction: column;
+
+}
+
+button {
+    font-size: 16pt;
+    width: 40px;
+    height: 40px;
+}
+
+.display {
+    width: 180px;
+    height: 60px;
+    background-color: #D0D0D0;
+    margin-bottom: 15px;
+}
+
+.buttons {
+    display: flex;
+}
+
+.operations button {
+    background-color: #FFCC00;
+}
