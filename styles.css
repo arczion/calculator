@@ -15,26 +15,31 @@ body {
     padding: 8px;
     display: flex; 
     flex-direction: column;
-
+    justify-content: space-evenly;
 }
 
 button {
-    font-size: 16pt;
+    font-size: 14pt;
     width: 40px;
     height: 40px;
 }
 
 .display {
+    padding: 4px;
     width: 180px;
     height: 60px;
     background-color: #D0D0D0;
     margin-bottom: 15px;
-}
-
-.buttons {
     display: flex;
+    align-items: flex-end;
+    justify-content: right;
 }
 
 .operations button {
     background-color: #FFCC00;
 }
+
+.buttons{
+    display: flex;
+}
+
