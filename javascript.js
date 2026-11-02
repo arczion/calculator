@@ -8,7 +8,10 @@ const divide = (a, b) => {
 };
 const multiply = (a, b) => a * b;
 
-console.log(subtract(5,3));
-console.log(divide(15,0));
-console.log(multiply(5,3));
+const number1 = 0;
+const number2 = 0;
+const operand = '';
 
+function operate(number1, number2, operand) {
+    return operand(number1,number2);
+}
