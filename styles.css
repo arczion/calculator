@@ -33,6 +33,7 @@ button {
     display: flex;
     align-items: flex-end;
     justify-content: right;
+    font-size: 24pt;
 }
 
 .operations button {
