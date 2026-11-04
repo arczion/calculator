@@ -25,6 +25,7 @@ button.addEventListener('click', (event) => {
         case '0':
             break;
         case '1':
+            writeText(target.value);
             break;
         case '2':
             break;
@@ -43,7 +44,7 @@ button.addEventListener('click', (event) => {
         case '9':
             break;
         case 'clr':
-            display.innerText = '';
+            display.textContent = '';
             break;
         case '+':
             break;
@@ -58,3 +59,4 @@ button.addEventListener('click', (event) => {
     }
 })
 
+const writeText = (text) => display.textContent += text;
