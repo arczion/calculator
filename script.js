@@ -15,3 +15,10 @@ const operand = '';
 function operate(number1, number2, operand) {
     return operand(number1,number2);
 }
+
+const button = document.querySelector('.buttons');
+
+button.addEventListener('click', (event) => {
+    let target = event.target;
+    console.log(target.value);
+})
