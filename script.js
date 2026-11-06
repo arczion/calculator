@@ -1,10 +1,12 @@
+
+// Variables to store numbers & operator
 let firstNumber = '';
 let operator = '';
 let secondNumber = '';
 
 
 
-
+// Functions to do the math operations
 function add(a, b) {
     return a + b;
 }
@@ -24,6 +26,7 @@ function multiply(a, b) {
     return a * b;
 }
 
+// Functions to take operator, num1 & num2 & do the calculations
 function operate(operator, a, b) {
     if (operator === '+') {
         return add(a, b);
@@ -36,6 +39,7 @@ function operate(operator, a, b) {
     }
 }
 
+// Event listener for digit buttons
 const display = document.querySelector('#display');
 const digitButtons = document.querySelectorAll('.digit');
 
@@ -51,6 +55,7 @@ digitButtons.forEach(function (button){
     });
 });
 
+// Event listener for operator buttons
 const operatorButtons = document.querySelectorAll('.operator');
 
 operatorButtons.forEach(function (button){
