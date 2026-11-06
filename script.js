@@ -60,6 +60,12 @@ const operatorButtons = document.querySelectorAll('.operator');
 
 operatorButtons.forEach(function (button){
     button.addEventListener('click', function(){
+        if(firstNumber !== '' && secondNumber !== '') {
+            const result = operate(operator, Number(firstNumber), Number(secondNumber));
+            firstNumber = String(result);
+            secondNumber = '';
+            display.textContent = firstNumber;
+        }
         operator = button.textContent;
     });
 });
