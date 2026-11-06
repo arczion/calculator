@@ -60,6 +60,7 @@ const operatorButtons = document.querySelectorAll('.operator');
 
 operatorButtons.forEach(function (button){
     button.addEventListener('click', function(){
+        //Checks for one completer pair and calculates and appends to the screen
         if(firstNumber !== '' && secondNumber !== '') {
             const result = operate(operator, Number(firstNumber), Number(secondNumber));
             firstNumber = String(result);
@@ -74,6 +75,11 @@ operatorButtons.forEach(function (button){
 const equalsButton = document.querySelector('#equals');
 
 equalsButton.addEventListener('click', function() {
+    // Checks if any of the the 3 values is empty and skips the calculation
+    if (firstNumber === '' || operator === '' || secondNumber === '') {
+        return;
+    }
+
     const result = operate(operator, Number(firstNumber), Number(secondNumber));
     display.textContent = result;
 });
