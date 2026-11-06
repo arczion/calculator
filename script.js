@@ -131,6 +131,7 @@ equalsButton.addEventListener('click', function() {
     justCalculated = true;
 });
 
+// Event listener for clear button
 const clearButton = document.querySelector('#clear');
 
 clearButton.addEventListener('click', function () {
@@ -138,4 +139,26 @@ clearButton.addEventListener('click', function () {
     operator = '';
     secondNumber = '';
     display.textContent = '0';
+});
+
+// Event listener for DEL button
+
+const backspaceButton = document.querySelector('#backspace');
+
+backspaceButton.addEventListener('click', function() {
+    if (operator === '') {
+        firstNumber = firstNumber.slice(0, -1);
+        if (firstNumber === '') {
+            display.textContent = '0';
+        } else {
+            display.textContent = firstNumber;
+        }
+    } else {
+        secondNumber = secondNumber.slice(0, -1);
+        if (secondNumber === '') {
+            display.textContent = '0';
+        } else {
+        display.textContent = secondNumber;
+        }
+    }    
 });

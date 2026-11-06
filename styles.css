@@ -24,13 +24,56 @@ body {
 
 .buttons {
     display: flex;
+}
+
+.left {
+    display: flex;
     flex-wrap: wrap;
+    width: 75%;
+}
+
+.right {
+    display: flex;
+    flex-direction: column;
+    width: 25%;
 }
 
 .buttons button {
-    width: 25%;
+    box-sizing: border-box;
     height: 60px;
     font-size: 22px;
     border: 1px solid #333;
     cursor: pointer;
+}
+
+.left button {
+    width: 33.333%;
+}
+
+.left .wide {
+    width: 66.666%;
+}
+
+.right button {
+    width: 100%;
+}
+
+.digit, .decimal {
+    background-color: #f0f0f0;
+    color: #222;
+}
+
+.operator {
+    background-color: #ff9f0a;
+    color: white;
+}
+
+#equals {
+    background-color: #34c759;
+    color: white;
+}
+
+#clear, #backspace {
+    background-color: #a5a5a5;
+    color: #222;
 }
