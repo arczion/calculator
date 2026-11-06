@@ -45,3 +45,12 @@ digitButtons.forEach(function (button){
         display.textContent = firstNumber;
     });
 });
+
+const operatorButtons = document.querySelectorAll('.operator');
+
+operatorButtons.forEach(function (button){
+    button.addEventListener('click', function(){
+        operator = button.textContent;
+        alert(operator);
+    });
+});
