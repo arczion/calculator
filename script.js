@@ -63,3 +63,11 @@ operatorButtons.forEach(function (button){
         operator = button.textContent;
     });
 });
+
+// Event listener for equal to button
+const equalsButton = document.querySelector('#equals');
+
+equalsButton.addEventListener('click', function() {
+    const result = operate(operator, Number(firstNumber), Number(secondNumber));
+    display.textContent = result;
+});
