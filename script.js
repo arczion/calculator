@@ -71,3 +71,12 @@ equalsButton.addEventListener('click', function() {
     const result = operate(operator, Number(firstNumber), Number(secondNumber));
     display.textContent = result;
 });
+
+const clearButton = document.querySelector('#clear');
+
+clearButton.addEventListener('click', function () {
+    firstNumber = '';
+    operator = '';
+    secondNumber = '';
+    display.textContent = '0';
+});
