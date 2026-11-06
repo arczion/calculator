@@ -3,6 +3,7 @@
 let firstNumber = '';
 let operator = '';
 let secondNumber = '';
+let justCalculated = false;
 
 
 
@@ -46,6 +47,10 @@ const digitButtons = document.querySelectorAll('.digit');
 digitButtons.forEach(function (button){
     button.addEventListener('click', function (){
         if (operator === '') {
+            if (justCalculated) {
+                firstNumber = '';
+                justCalculated = false;
+            }
         firstNumber += button.textContent;
         display.textContent = firstNumber;
         } else {
@@ -53,6 +58,33 @@ digitButtons.forEach(function (button){
             display.textContent = secondNumber;
         }
     });
+});
+
+// Event listener for decimal
+const decimalButton = document.querySelector('.decimal');
+
+decimalButton.addEventListener('click', function() {
+    if (operator === '') {
+        if (justCalculated) {
+            firstNumber = '';
+            justCalculated = false;
+        }
+        if(!firstNumber.includes('.')) {
+            if (firstNumber === '') {
+                firstNumber = '0';
+            }
+            firstNumber += '.';
+            display.textContent = firstNumber;
+        }
+    } else {
+        if(!secondNumber.includes('.')) {
+            if (secondNumber = '') {
+                secondNumber = '0';
+            }
+            secondNumber += '.';
+            display.textContent = secondNumber;
+        }
+    }
 });
 
 // Event listener for operator buttons
@@ -82,6 +114,21 @@ equalsButton.addEventListener('click', function() {
 
     const result = operate(operator, Number(firstNumber), Number(secondNumber));
     display.textContent = result;
+
+    if (result === 'Nice Try!') {
+        display.textContent = result;
+        firstNumber = '';
+        operator = '';
+        secondNumber = '';
+        return;
+    }
+
+    const rounded = Math.round(result * 1000) / 1000;
+    display.textContent = rounded;
+    firstNumber = String(rounded);
+    operator = '';
+    secondNumber = '';
+    justCalculated = true;
 });
 
 const clearButton = document.querySelector('#clear');
