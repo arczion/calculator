@@ -162,3 +162,37 @@ backspaceButton.addEventListener('click', function() {
         }
     }    
 });
+
+// Keyboard support
+document.addEventListener('keydown', function(event){
+    
+    digitButtons.forEach(function (button){
+        if (button.textContent === event.key) {
+            button.click();
+        }
+    });
+    
+    operatorButtons.forEach(function (button){
+    if (button.textContent === event.key) {
+        button.click();
+        } 
+    });
+
+    if (event.key === 'Enter') {
+        event.preventDefault();
+        equalsButton.click();
+    }
+
+    if (event.key === 'Backspace') {
+        backspaceButton.click();
+    }
+
+    if (event.key === 'Escape') {
+        clearButton.click();
+    }
+
+    if (event.key === '.') {
+        decimalButton.click();
+    }
+});
+
