@@ -35,3 +35,13 @@ function operate(operator, a, b) {
         return divide(a, b);
     }
 }
+
+const display = document.querySelector('#display');
+const digitButtons = document.querySelectorAll('.digit');
+
+digitButtons.forEach(function (button){
+    button.addEventListener('click', function (){
+        firstNumber += button.textContent;
+        display.textContent = firstNumber;
+    });
+});
