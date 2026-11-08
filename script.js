@@ -4,7 +4,8 @@ let firstNumber = '';
 let operator = '';
 let secondNumber = '';
 let justCalculated = false;
-
+let lastOperand = '';
+let lastNumber = '';
 
 
 // Functions to do the math operations
@@ -107,6 +108,18 @@ operatorButtons.forEach(function (button){
 const equalsButton = document.querySelector('#equals');
 
 equalsButton.addEventListener('click', function() {
+    
+    if(justCalculated){
+        if (!operator === '') return;
+
+        firstNumber = String(display.textContent);
+        secondNumber = lastNumber;
+        operator = lastOperator;
+
+         const result = operate(operator, Number(firstNumber), Number(secondNumber));
+         display.textContent = result;
+
+    }
     // Checks if any of the the 3 values is empty and skips the calculation
     if (firstNumber === '' || operator === '' || secondNumber === '') {
         return;
@@ -126,9 +139,12 @@ equalsButton.addEventListener('click', function() {
     const rounded = Math.round(result * 1000) / 1000;
     display.textContent = rounded;
     firstNumber = String(rounded);
+    lastOperator = operator;
+    lastNumber = secondNumber;
     operator = '';
     secondNumber = '';
     justCalculated = true;
+    
 });
 
 // Event listener for clear button

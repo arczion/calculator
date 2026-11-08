@@ -83,7 +83,6 @@ buttonsContainer.addEventListener("click", function(event) {
 
     if (type === "operator") {
         inputOperator(value);
-        console.log(state);
     }
 
     if (type === "equal") {
